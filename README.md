@@ -7,7 +7,7 @@
 
 ## Commande : 
 
-#### * /pin <code> : Create or Enter the code on log.
+#### * /pin <code> | Create or Enter the code on log.
 
 ## Features : 
 
