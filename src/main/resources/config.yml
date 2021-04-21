@@ -1,0 +1,29 @@
+##############################################################
+#  Default configuration for PIN Plugin by Tractopelle#4020  #
+##############################################################
+
+PREFIX: "§6PIN §f» §e"
+
+USAGE:  "Usage: /pin <code>"
+NO-PERMISSION: "You don't have the permission."
+NOT-PLAYER: "Only player can execute this command."
+SUCCESS-PIN: "Code good, connection made"
+FAIL-PIN: "Wrong code, try again"
+SUCCESS-CREATE: "Successful creation of the pin tree §6(§e%pin%§6)"
+NUMERIC-ONLY: "Please put only numbers"
+ENTER-PIN: "Please enter your pin, /pin <code>"
+CREATE-PIN: "Please create a pin, /pin <code>"
+ALREADY-LOG: "You are already connected"
+CANCEL-ACTION: "Make your pin before being able to access the server"
+KICK-RELOAD: "Server reload and your not logged"
+WRONG-CODE-ACHIEVED: "You've reached the limit"
+WRONG-CODE-ACHIEVED-NOTIFY: "§cThe player §e%player%§c has reached the pin fail limit!"
+
+WRONG-TIME-KICK: 3
+
+TITLE:
+  ACTIVE: TRUE
+  PREFIX: "§6PIN"
+  FADE-IN: 10
+  STAY: 120
+  FADE-OUT: 10

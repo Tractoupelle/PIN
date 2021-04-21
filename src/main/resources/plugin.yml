@@ -1,0 +1,10 @@
+name: PIN
+version: ${project.version}
+description: Public PIN plugin.
+author: Tractopelle
+
+main: fr.tractopelle.pin.CorePlugin
+
+commands:
+  pin:
+    description: Main command of the plugin.
