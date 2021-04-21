@@ -17,4 +17,4 @@
 
 ## Hoping that you like the plugin
 
-<a id="raw-url" href="https://github.com/Tractoupelle/Assets/raw/master/PIN-0.0.1.jar">Download the PLUGIN</a>
+<a id="raw-url" href="https://github.com/Tractoupelle/PIN/blob/master/PIN-0.0.1.jar?raw=true">Download the PLUGIN</a>
