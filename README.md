@@ -8,6 +8,11 @@
 ## Commande : 
 
 #### * /pin <your-code> : Create or Enter the code on log.
+  
+## Permissions : 
+
+#### * PIN.USE : Be reached by the PIN
+#### * PIN.NOTIFY : Notify when players fail some times the PIN
 
 ## Features : 
 
