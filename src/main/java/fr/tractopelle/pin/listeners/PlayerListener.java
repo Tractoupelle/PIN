@@ -7,6 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class PlayerListener implements Listener {
 
@@ -27,6 +29,8 @@ public class PlayerListener implements Listener {
         if(player.hasPermission("PIN.USE")) {
 
             corePlugin.getPlayersManager().addInLogin(player, player.getLocation());
+
+            player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 10000, 10));
 
             for (String key : corePlugin.getPinConfiguration().getConfigurationSection("PLAYERS").getKeys(false)) {
 
@@ -59,12 +63,14 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onCommand(PlayerCommandPreprocessEvent event){
 
-        if(corePlugin.getPlayersManager().getInLogin().containsKey(event.getPlayer()) && !event.getMessage().startsWith("/pin")){
+        if(corePlugin.getPlayersManager().getInLogin().containsKey(event.getPlayer())){
+            if(!event.getMessage().startsWith("/login") || !event.getMessage().startsWith("/register") || !event.getMessage().startsWith("/pin")) {
 
-            event.setCancelled(true);
+                event.setCancelled(true);
 
-            sendCancelActionMessage(event.getPlayer());
+                this.sendCancelActionMessage(event.getPlayer());
 
+            }
         }
     }
 
@@ -76,7 +82,7 @@ public class PlayerListener implements Listener {
 
             event.setCancelled(true);
 
-            sendCancelActionMessage(event.getPlayer());
+            this.sendCancelActionMessage(event.getPlayer());
 
         }
     }
@@ -88,7 +94,7 @@ public class PlayerListener implements Listener {
 
             event.setCancelled(true);
 
-            sendCancelActionMessage(event.getPlayer());
+            this.sendCancelActionMessage(event.getPlayer());
 
         }
     }
@@ -100,7 +106,7 @@ public class PlayerListener implements Listener {
 
             event.setCancelled(true);
 
-            sendCancelActionMessage(event.getPlayer());
+            this.sendCancelActionMessage(event.getPlayer());
 
         }
     }
@@ -114,7 +120,7 @@ public class PlayerListener implements Listener {
 
                 event.setCancelled(true);
 
-                sendCancelActionMessage(((Player) event.getEntity()).getPlayer());
+                this.sendCancelActionMessage(((Player) event.getEntity()).getPlayer());
 
             }
         }
@@ -128,7 +134,7 @@ public class PlayerListener implements Listener {
             event.getWhoClicked().closeInventory();
             event.setCancelled(true);
 
-            sendCancelActionMessage(((Player) event.getWhoClicked()));
+            this.sendCancelActionMessage(((Player) event.getWhoClicked()));
 
         }
     }
