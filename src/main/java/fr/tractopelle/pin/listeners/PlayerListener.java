@@ -30,7 +30,19 @@ public class PlayerListener implements Listener {
 
             corePlugin.getPlayersManager().addInLogin(player, player.getLocation());
 
-            player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 10000, 10));
+            player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 1000000, 1000));
+
+            if(corePlugin.getPinConfiguration().getConfigurationSection("PLAYERS").getKeys(false).isEmpty()){
+
+                player.sendMessage(prefix + corePlugin.getConfiguration().getString("CREATE-PIN"));
+
+                corePlugin.getTitle()
+                        .sendTitle(corePlugin.getConfiguration().getBoolean("TITLE.ACTIVE"),
+                                player,
+                                corePlugin.getConfiguration().getString("TITLE.PREFIX"),
+                                corePlugin.getConfiguration().getString("CREATE-PIN"));
+
+            }
 
             for (String key : corePlugin.getPinConfiguration().getConfigurationSection("PLAYERS").getKeys(false)) {
 
@@ -43,7 +55,6 @@ public class PlayerListener implements Listener {
                                     player,
                                     corePlugin.getConfiguration().getString("TITLE.PREFIX"),
                                     corePlugin.getConfiguration().getString("ENTER-PIN"));
-
 
                 } else {
 
@@ -61,10 +72,11 @@ public class PlayerListener implements Listener {
     }
 
     @EventHandler
-    public void onCommand(PlayerCommandPreprocessEvent event){
+    public void onCommand(PlayerCommandPreprocessEvent event) {
 
-        if(corePlugin.getPlayersManager().getInLogin().containsKey(event.getPlayer())){
-            if(!event.getMessage().startsWith("/login") || !event.getMessage().startsWith("/register") || !event.getMessage().startsWith("/pin")) {
+        if (corePlugin.getPlayersManager().getInLogin().containsKey(event.getPlayer())) {
+
+            if (corePlugin.getConfiguration().getStringList("ALLOWED-COMMANDS").stream().noneMatch(s -> event.getMessage().startsWith(s))) {
 
                 event.setCancelled(true);
 
@@ -73,7 +85,6 @@ public class PlayerListener implements Listener {
             }
         }
     }
-
 
     @EventHandler
     public void onChat(AsyncPlayerChatEvent event){
@@ -116,7 +127,7 @@ public class PlayerListener implements Listener {
 
         if(event.getEntity() instanceof Player) {
 
-            if (corePlugin.getPlayersManager().getInLogin().containsKey((Player) event.getEntity())) {
+            if (corePlugin.getPlayersManager().getInLogin().containsKey(event.getEntity())) {
 
                 event.setCancelled(true);
 

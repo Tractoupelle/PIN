@@ -8,3 +8,5 @@ main: fr.tractopelle.pin.CorePlugin
 commands:
   pin:
     description: Main command of the plugin.
+  pinadmin:
+    description: Main Admin command of the plugin.

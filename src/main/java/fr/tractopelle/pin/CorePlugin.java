@@ -1,6 +1,7 @@
 package fr.tractopelle.pin;
 
 import fr.tractopelle.pin.commands.command.PIN;
+import fr.tractopelle.pin.commands.command.PINAdmin;
 import fr.tractopelle.pin.config.Config;
 import fr.tractopelle.pin.listeners.PlayerListener;
 import fr.tractopelle.pin.profile.PlayersManager;
@@ -67,6 +68,7 @@ public class CorePlugin extends JavaPlugin {
     private void registerCommands() {
 
         new PIN(this);
+        new PINAdmin(this);
 
     }
 

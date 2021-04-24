@@ -5,8 +5,13 @@
 PREFIX: "§6PIN §f» §e"
 
 USAGE:  "Usage: /pin <code>"
+USAGE-ADMIN:
+  - "§6PIN ADMIN §f» §e"
+  - " §f» §e/pinadmin delete <player> : §7Delete PIN player."
+  - " §f» §e/pinadmin check <player> : §7Check PIN player."
 NO-PERMISSION: "You don't have the permission."
 NOT-PLAYER: "Only player can execute this command."
+NOT-ONLINE: "This player is not online."
 SUCCESS-PIN: "Code good, connection made"
 FAIL-PIN: "Wrong code, try again"
 SUCCESS-CREATE: "Successful creation of the pin tree §6(§e%pin%§6)"
@@ -18,6 +23,12 @@ CANCEL-ACTION: "Make your pin before being able to access the server"
 KICK-RELOAD: "Server reload and your not logged"
 WRONG-CODE-ACHIEVED: "You've reached the limit"
 WRONG-CODE-ACHIEVED-NOTIFY: "§cThe player §e%player%§c has reached the pin fail limit!"
+DELETE-PIN: "The PIN of %player% has been deleted."
+CHECK-PIN: "The PIN of %player% is §6%pin%§e."
+NOT-HAVE-A-PIN: "This player haven't a PIN."
+CHECK-COMMAND-DISABLE: "This check command is disable."
+
+DISABLE-CHECK-COMMAND: false
 
 WRONG-TIME-KICK: 3
 
@@ -27,3 +38,9 @@ TITLE:
   FADE-IN: 10
   STAY: 120
   FADE-OUT: 10
+
+ALLOWED-COMMANDS:
+  - /pin
+  - /login
+  - /register
+  - /changepassword
