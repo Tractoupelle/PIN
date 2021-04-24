@@ -8,18 +8,24 @@
 ## Commande : 
 
 #### * /pin <your-code> : Create or Enter the code on log.
-  
+#### * /pinadmin check <player> : See the PIN player (command can be disable)
+#### * /pinadmin delete <player> : Delete the PIN of the player.
+
 ## Permissions : 
 
 #### * PIN.USE : Be reached by the PIN
 #### * PIN.NOTIFY : Notify when players fail some times the PIN
+#### * PIN.ADMIN : Use /pinadmin commands
 
 ## Features : 
 
 #### * Wrong fail before kick
 #### * Title message 
 #### * Kick players when not log.
+#### * Check and delete commands
+#### * Blindness effect
+#### * Fully configurable
 
 ## Hoping that you like the plugin
 
-<a id="raw-url" href="https://github.com/Tractoupelle/PIN/blob/master/PIN-0.0.1.jar?raw=true">Download the PLUGIN</a>
+<a id="raw-url" href="https://github.com/Tractoupelle/PIN/blob/master/PIN-0.0.2.jar?raw=true">Download the PLUGIN</a>
