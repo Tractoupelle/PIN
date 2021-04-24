@@ -19,9 +19,9 @@
 
 ## Features : 
 
-#### * Wrong fail before kick
+#### * Wrongs fail before kick
 #### * Title message 
-#### * Kick players when not log.
+#### * Kick players on reload when not log.
 #### * Check and delete commands
 #### * Blindness effect
 #### * Fully configurable
